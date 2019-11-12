@@ -10,6 +10,9 @@
 		2F0C125A2371E1650000F2C5 /* Bogracz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0C12502371E1650000F2C5 /* Bogracz.framework */; };
 		2F0C125F2371E1650000F2C5 /* BograczTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0C125E2371E1650000F2C5 /* BograczTests.swift */; };
 		2F0C12612371E1650000F2C5 /* Bogracz.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F0C12532371E1650000F2C5 /* Bogracz.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F0C126B2371E1840000F2C5 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0C126A2371E1840000F2C5 /* Container.swift */; };
+		2F0C126D2371E1D90000F2C5 /* ThreadSafeDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0C126C2371E1D90000F2C5 /* ThreadSafeDictionary.swift */; };
+		2F0C126F2371E2710000F2C5 /* ThreadSafeDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0C126E2371E2710000F2C5 /* ThreadSafeDictionaryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		2F0C12592371E1650000F2C5 /* BograczTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BograczTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F0C125E2371E1650000F2C5 /* BograczTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BograczTests.swift; sourceTree = "<group>"; };
 		2F0C12602371E1650000F2C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F0C126A2371E1840000F2C5 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		2F0C126C2371E1D90000F2C5 /* ThreadSafeDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadSafeDictionary.swift; sourceTree = "<group>"; };
+		2F0C126E2371E2710000F2C5 /* ThreadSafeDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeDictionaryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,8 @@
 			children = (
 				2F0C12532371E1650000F2C5 /* Bogracz.h */,
 				2F0C12542371E1650000F2C5 /* Info.plist */,
+				2F0C126A2371E1840000F2C5 /* Container.swift */,
+				2F0C126C2371E1D90000F2C5 /* ThreadSafeDictionary.swift */,
 			);
 			path = Bogracz;
 			sourceTree = "<group>";
@@ -82,6 +90,7 @@
 			children = (
 				2F0C125E2371E1650000F2C5 /* BograczTests.swift */,
 				2F0C12602371E1650000F2C5 /* Info.plist */,
+				2F0C126E2371E2710000F2C5 /* ThreadSafeDictionaryTests.swift */,
 			);
 			path = BograczTests;
 			sourceTree = "<group>";
@@ -148,6 +157,7 @@
 				TargetAttributes = {
 					2F0C124F2371E1650000F2C5 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 					2F0C12582371E1650000F2C5 = {
 						CreatedOnToolsVersion = 10.2;
@@ -194,6 +204,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F0C126D2371E1D90000F2C5 /* ThreadSafeDictionary.swift in Sources */,
+				2F0C126B2371E1840000F2C5 /* Container.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F0C126F2371E2710000F2C5 /* ThreadSafeDictionaryTests.swift in Sources */,
 				2F0C125F2371E1650000F2C5 /* BograczTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +354,7 @@
 		2F0C12652371E1650000F2C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -358,6 +372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Prokop.Bogracz;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +381,7 @@
 		2F0C12662371E1650000F2C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -391,6 +407,7 @@
 		2F0C12682371E1650000F2C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97H7M775CZ;
 				INFOPLIST_FILE = BograczTests/Info.plist;
@@ -409,6 +426,7 @@
 		2F0C12692371E1650000F2C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97H7M775CZ;
 				INFOPLIST_FILE = BograczTests/Info.plist;
