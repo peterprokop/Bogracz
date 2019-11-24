@@ -29,7 +29,7 @@ class ThreadSafeDictionaryTests: XCTestCase {
             attributes: .concurrent
         )
 
-        // 5_000 seems to be small enought to not to cause performance problems
+        // 5_000 seems to be small enough to not to cause performance problems
         for i in 0 ..< 5_000 {
             let writeExpectation = expectation(description: "Write expectation")
             let readExpectation = expectation(description: "Read expectation")
