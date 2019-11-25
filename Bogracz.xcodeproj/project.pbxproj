@@ -12,6 +12,7 @@
 		2F0C126B2371E1840000F2C5 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0C126A2371E1840000F2C5 /* DependencyContainer.swift */; };
 		2F0C126D2371E1D90000F2C5 /* ThreadSafeDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0C126C2371E1D90000F2C5 /* ThreadSafeDictionary.swift */; };
 		2F0C126F2371E2710000F2C5 /* ThreadSafeDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0C126E2371E2710000F2C5 /* ThreadSafeDictionaryTests.swift */; };
+		2F54D4E9238BCA1F006A21FF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2F54D4E8238BCA1F006A21FF /* README.md */; };
 		2F89CF49237AF00300E38357 /* DependencyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F89CF48237AF00300E38357 /* DependencyToken.swift */; };
 		2F89CF4B237AF4CB00E38357 /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F89CF4A237AF4CB00E38357 /* DependencyContainerTests.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,7 @@
 		2F0C126A2371E1840000F2C5 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		2F0C126C2371E1D90000F2C5 /* ThreadSafeDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadSafeDictionary.swift; sourceTree = "<group>"; };
 		2F0C126E2371E2710000F2C5 /* ThreadSafeDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeDictionaryTests.swift; sourceTree = "<group>"; };
+		2F54D4E8238BCA1F006A21FF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2F89CF48237AF00300E38357 /* DependencyToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyToken.swift; sourceTree = "<group>"; };
 		2F89CF4A237AF4CB00E38357 /* DependencyContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +63,7 @@
 		2F0C12462371E1650000F2C5 = {
 			isa = PBXGroup;
 			children = (
+				2F54D4E8238BCA1F006A21FF /* README.md */,
 				2F0C12522371E1650000F2C5 /* Bogracz */,
 				2F0C125D2371E1650000F2C5 /* BograczTests */,
 				2F0C12512371E1650000F2C5 /* Products */,
@@ -190,6 +193,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F54D4E9238BCA1F006A21FF /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

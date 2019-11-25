@@ -1,8 +1,7 @@
 import Foundation
 
-/**
- Thread-safe dictionary wrapper
- */
+/// Thread-safe dictionary wrapper
+/// - Important: Note that this is a `class`, i.e. reference (not value) type
 public final class ThreadSafeDictionary<Key: Hashable, Value> {
 
     private var container: [Key: Value] = [:]
@@ -18,21 +17,20 @@ public final class ThreadSafeDictionary<Key: Hashable, Value> {
         }
     }
 
-    public init() {}
-
-    internal var values: [Value] {
+    public var values: [Value] {
         return containerAccessQueue.sync {
             return Array(self.container.values)
         }
     }
 
-    /**
-     Sets the value for key
+    public init() {}
 
-     - parameter value: The value to set for key
-     - parameter forKey key: The key to set value for
-     */
-    func set(value: Value, forKey key: Key) {
+    /// Sets the value for key
+    ///
+    /// - Parameters:
+    ///   - value: The value to set for key
+    ///   - key: The key to set value for
+    public func set(value: Value, forKey key: Key) {
         containerAccessQueue.sync(flags: .barrier) {
             self._set(value: value, forKey: key)
         }
@@ -43,20 +41,6 @@ public final class ThreadSafeDictionary<Key: Hashable, Value> {
         return containerAccessQueue.sync(flags: .barrier) {
             self._remove(key)
         }
-    }
-
-    @inline(__always)
-    private func _set(value: Value, forKey key: Key) {
-        self.container[key] = value
-    }
-
-    @inline(__always)
-    @discardableResult
-    private func _remove(_ key: Key) -> Value? {
-        guard let index = self.container.index(forKey: key) else { return nil }
-
-        let tuple = self.container.remove(at: index)
-        return tuple.value
     }
 
     public func contains(_ key: Key) -> Bool {
@@ -85,4 +69,20 @@ public final class ThreadSafeDictionary<Key: Hashable, Value> {
             }
         }
     }
+
+    // MARK: Private
+    @inline(__always)
+    private func _set(value: Value, forKey key: Key) {
+        self.container[key] = value
+    }
+
+    @inline(__always)
+    @discardableResult
+    private func _remove(_ key: Key) -> Value? {
+        guard let index = self.container.index(forKey: key) else { return nil }
+
+        let tuple = self.container.remove(at: index)
+        return tuple.value
+    }
+
 }
