@@ -9,7 +9,15 @@ Compared to Swinject it has some nice properties like thread safety
 and type-safe arguments.
 
 # Installation
-TBD
+
+## Carthage
+- `touch Cartfile`
+- `nano Cartfile`
+- Put `github "peterprokop/Bogracz" == 1.0.0` into Cartfile
+- Save it: `ctrl-x`, `y`, `enter`
+- Run `carthage update`
+- Add `Bogracz.framework` to your carthage [copy-frameworks phase](https://github.com/Carthage/Carthage#quick-start)
+- Add `import Bogracz` in files where you plan to use it 
 
 # Usage
 Do `import Bogracz`
