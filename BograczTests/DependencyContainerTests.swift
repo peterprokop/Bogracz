@@ -17,7 +17,7 @@ final class DependencyContainerTests: XCTestCase {
         let container = DependencyContainer()
         let dummyService: DummyServiceProviding = DummyService()
 
-        container.addStatic(DummyServiceProviding.self, instance: dummyService)
+        container.add(DummyServiceProviding.self, instance: dummyService)
 
         XCTAssertEqual(
             container.get(DummyServiceProviding.self)?.dummyMethod(),
@@ -29,7 +29,7 @@ final class DependencyContainerTests: XCTestCase {
     func testDynamicAddingAndGetting() {
         let container = DependencyContainer()
 
-        container.addDynamic(DummyServiceProviding.self, block: { _ in
+        container.add(DummyServiceProviding.self, block: { _ in
             return DummyService()
         })
 
@@ -44,7 +44,7 @@ final class DependencyContainerTests: XCTestCase {
         let container = DependencyContainer()
         let config = DummyServiceConfig(dummyMethodReturnValue: "test")
 
-        container.addDynamic(DummyServiceProviding.self, block: { (r, config: DummyServiceConfig) in
+        container.add(DummyServiceProviding.self, block: { (r, config: DummyServiceConfig) in
             return DummyServiceWithConfig(config: config)
         })
 

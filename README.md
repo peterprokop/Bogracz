@@ -3,7 +3,7 @@ Bogracz
 
 # Intro
 
-Bogracz is really smal and nifty dependency injection (DI) framework. 
+Bogracz is really small and nifty dependency injection (DI) framework. 
 
 Compared to Swinject it has some nice properties like thread safety 
 and type-safe arguments.
@@ -19,12 +19,12 @@ Then you can add dependencies as static (dependency will be created once and you
 
 ```swift
 let myService: MyServiceProviding = MyService()
-container.addStatic(MyServiceProviding, instance: myService)
+container.add(MyServiceProviding.self, instance: myService)
 ```
 
 ... dynamic (dependency will be created every time you get it):
 ```swift
-container.addDynamic(MyServiceProviding.self, block: { _ in
+container.add(MyServiceProviding.self, block: { _ in
   return MyService()
 })
 ```
@@ -33,7 +33,7 @@ container.addDynamic(MyServiceProviding.self, block: { _ in
 ```swift
 let config = MyServiceConfig(answer: 42)
 
-container.addDynamic(MyServiceProviding.self, block: { (r, config: MyServiceConfig) in
+container.add(MyServiceProviding.self, block: { (r, config: MyServiceConfig) in
   return MyService(config: config)
 })
 ```
@@ -42,12 +42,12 @@ Then you can get your dependency in following way:
 
 For dependencies without config - 
 ```swift
-container.get(MyServiceProviding.self)
+let myService = container.get(MyServiceProviding.self)
 ```
 
 For configurable dependencies -
 ```swift
-container.get(MyServiceProviding.self, config: config)
+let myService = container.get(MyServiceProviding.self, config: config)
 ```
 
 # Dependency Injection
@@ -55,4 +55,3 @@ Some useful articles about this topic:
 - https://martinfowler.com/articles/injection.html
 - https://www.martinfowler.com/articles/dipInTheWild.html
 - https://www.martinfowler.com/bliki/InversionOfControl.html
-

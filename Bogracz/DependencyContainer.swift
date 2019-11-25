@@ -38,17 +38,32 @@ final public class DependencyContainer {
         return nil
     }
 
-    public func addStatic<T>(_ type: T.Type, instance: T) {
+    /// Adds dependency statically
+    ///
+    /// - Parameters:
+    ///   - type: type of the dependency
+    ///   - instance: instance of the dependency
+    public func add<T>(_ type: T.Type, instance: T) {
         let token = DependencyToken(type: type, configType: nil)
         threadSafeDictionary[token] = instance
     }
 
-    public func addDynamic<T>(_ type: T.Type, block: @escaping (DependencyContainer) -> T) {
+    /// Adds dependency dynamically (it will be created each time `get(...)` is called)
+    ///
+    /// - Parameters:
+    ///   - type: type of the dependency
+    ///   - block: block which creates the dependency
+    public func add<T>(_ type: T.Type, block: @escaping (DependencyContainer) -> T) {
         let token = DependencyToken(type: type, configType: nil)
         threadSafeDictionary[token] = block
     }
 
-    public func addDynamic<T, C>(_ type: T.Type, block: @escaping (DependencyContainer, C) -> T) {
+    /// Adds dependency dynamically with configuration
+    ///
+    /// - Parameters:
+    ///   - type: type of the dependency
+    ///   - block: block which creates the dependency
+    public func add<T, C>(_ type: T.Type, block: @escaping (DependencyContainer, C) -> T) {
         let token = DependencyToken(type: type, configType: C.self)
         threadSafeDictionary[token] = block
     }
